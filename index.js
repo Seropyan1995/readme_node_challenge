@@ -3,6 +3,11 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./generateMarkdown');
 
+
+// added license as const as it is being referenced within the generalMarkdown.js? also seen this online so added it just incase.
+const license = ['Apache 2.0 License','Boost Software License 1.0','BSD 3-Clause License','BSD 2-Clause License', 'None']
+
+// created const array with questions for user input
 // TODO: Create an array of questions for user input
 const questions = [{
     type: 'input',
@@ -33,7 +38,7 @@ const questions = [{
     type: 'checkbox',
     message: 'pick license that you wish to use!',
     name: 'license',
-    choices: ['MIT License','Apache License 2.0','GNU General Public License v3.0','Boost Software License 1.0', 'None']
+    choices: license,
 },
 {
     type: 'input',
@@ -49,7 +54,7 @@ const questions = [{
     type: 'list',
     message: 'if you have any questions pick from the list of contact methods!',
     name: 'questions',
-    choices: ['email','phone','text']
+    choices: ['email','phone','text'],
 }
 ];
 
@@ -57,7 +62,7 @@ const questions = [{
 function writeToFile(data) {
     const fileName = './README.md';
     fs.writeFile(fileName, data, function (err){
-        err ? console.error(err) : console.log(fileName + " Successfully Created!")
+        err ? console.error(err) : console.log("Successfully Created README.md!")
     });
 }
 
