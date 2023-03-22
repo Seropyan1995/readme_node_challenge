@@ -1,0 +1,23 @@
+{
+  "name": "readme_node_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seropyan1995/readme_node_challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Seropyan1995/readme_node_challenge/issues"
+  },
+  "homepage": "https://github.com/Seropyan1995/readme_node_challenge#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
