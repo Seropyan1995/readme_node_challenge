@@ -35,13 +35,18 @@ return licenseLink;
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
 let licenseSection = '';
+if(license != 'None'){
+    licenseSection += '## License';
+    licenseSection += 'Refer to ' + renderLicenseLink(license) + 'for more information on this license'
+}
+return licenseSection;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+    const tableContent = ['Title', 'Description', 'Installation', 'Usage', 'License', 'Contribute', 'Tests', 'Questions'];
+    return `## ${data.title}`;
 
-`;
 }
 
 module.exports = generateMarkdown;

@@ -12,17 +12,12 @@ const license = ['Apache 2.0 License','Boost Software License 1.0','BSD 3-Clause
 const questions = [{
     type: 'input',
     message: 'What is the title of your project?',
-    name: 'name',
+    name: 'title',
 },
 {
     type: 'input',
     message: 'What would you like to add in descriptions?',
     name: 'description',
-},
-{
-    type: 'input',
-    message: 'Insert your table of contents!',
-    name: 'table of content',
 },
 {
     type: 'input',
