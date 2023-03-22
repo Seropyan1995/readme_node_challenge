@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./generateMarkdown');
+const generateMarkdown = require('./util/generateMarkdown');
 
 
 // added license as const as it is being referenced within the generalMarkdown.js? also seen this online so added it just incase.
