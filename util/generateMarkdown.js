@@ -36,17 +36,21 @@ return licenseLink;
 function renderLicenseSection(license) {
 let licenseSection = '';
 if(license != 'None'){
-    licenseSection += '## License';
-    licenseSection += 'Refer to ' + renderLicenseLink(license) + 'for more information on this license'
+    licenseSection += '## License\n';
+    licenseSection += 'Refer to ' + renderLicenseLink(license) + 'for more information on this license\n'
 }
 return licenseSection;
 }
+let tableContent = ['Title', 'Description', 'Installation', 'Usage', 'License', 'Contribute', 'Tests', 'Questions'];
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-    const tableContent = ['Title', 'Description', 'Installation', 'Usage', 'License', 'Contribute', 'Tests', 'Questions'];
-    return `## ${data.title}`;
+    for (let i = 0; i < tableContent.length; i++){
+        tableArr = tableArr[i];
+       };
+    return `## ${data.title} \n# Table of Content:\n# ${tableArr[i]} \n
+#Description${data.description}\n`;
 
-}
+};
 
 module.exports = generateMarkdown;
