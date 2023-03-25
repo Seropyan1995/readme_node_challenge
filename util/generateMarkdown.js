@@ -30,25 +30,26 @@ return licenseLink;
 function renderLicenseSection(license) {
 let licenseSection = '';
 if(license != 'None'){
-    licenseSection += '## License\n';
-    licenseSection += 'Refer to ' + renderLicenseLink(license) + 'for more information on this license\n'
+    licenseSection = '## License\n Refer to ' + renderLicenseLink(license) + ' for more information on this license\n'
 }
 return licenseSection;
-}
-let tableContent = ['* Description \n', ' * Installation \n', '* Usage\n ', '* License \n', '* Contribute \n', '* Tests \n', '* Questions \n'];
+};
+let tableContent = ['* Description \n', ' * Installation \n', '* Usage\n ', '* Contribute \n', '* Tests \n','* License \n', '* Questions \n'];
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
     let tableArr = '';
     for (let i = 0; i < tableContent.length; i++){
         tableArr += tableContent[i];
-        console.log(tableArr);
        };
 return`# ${data.title} \n
 ${renderLicenseBadge(data.license)}
 # Table of Content: \n
 ${tableArr}\n
-# Description \n ${data.description}\n`;
+# Description \n ${data.description}\n
+# Installation \n ${data.installation}\n
+# Usage \n ${data.usage}\n
+${renderLicenseSection(data.license)}`;
 
 };
 
