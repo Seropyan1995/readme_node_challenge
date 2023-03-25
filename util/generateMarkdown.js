@@ -56,7 +56,9 @@ ${tableArr}\n
 # Contribute \n ${data.contribute}\n
 # Tests \n ${data.tests}\n
 ${renderLicenseSection(data.license)}
-# Questions \n ${data.question}\n`;
+# Questions \n
+You can find my github [HERE](https://github.com/${data.username})\n
+You can email me at${data.email} if you have any questions.`;
 };
 
 module.exports = generateMarkdown;

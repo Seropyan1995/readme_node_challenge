@@ -46,10 +46,14 @@ const questions = [{
     name: 'tests',
 },
 {
-    type: 'list',
-    message: 'if you have any questions pick from the list of contact methods!',
-    name: 'question',
-    choices: ['email','phone','text'],
+    type: 'input',
+    message: 'Enter your github username:',
+    name: 'username'
+},
+{
+    type: 'input',
+    message: 'Enter your email address:',
+    name: 'email',
 }
 ];
 
