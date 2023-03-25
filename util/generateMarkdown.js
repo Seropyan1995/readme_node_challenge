@@ -13,17 +13,21 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
     let licenseLink;
-if (license === 'Apache_2.0-blue.svg'){
+if (license[0] === 'Apache_2.0-blue.svg'){
     licenseLink = 'https://opensource.org/licenses/Apache-2.0';
-}else if (license ==='Boost_1.0-lightblue.svg'){
+}else if (license[0] === 'Boost_1.0-lightblue.svg'){
     licenseLink = 'https://www.boost.org/LICENSE_1_0.txt';
-}else if (license === 'BSD_3--Clause-blue.svg'){
+}else if (license[0] === 'BSD_3--Clause-blue.svg'){
     licenseLink = 'https://opensource.org/licenses/BSD-3-Clause';
-}else if (license === 'BSD_2--Clause-orange.svg'){
-    licenseLink = 'https://opensource.org/licenses/BSD-2-Clause';
+}else if (license[0] === 'BSD_2--Clause-orange.svg'){
+   licenseLink = 'https://opensource.org/licenses/BSD-2-Clause';
+}else {
+    licenseLink="";
 }
+console.log(license)
+console.log("this is license link" + licenseLink)
 return licenseLink;
-}
+};
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -34,7 +38,7 @@ if(license != 'None'){
 }
 return licenseSection;
 };
-let tableContent = ['* Description \n', ' * Installation \n', '* Usage\n ', '* Contribute \n', '* Tests \n','* License \n', '* Questions \n'];
+let tableContent = ['* [Description](#description)\n', ' * [Installation](#installation) \n', '* [Usage](#usage)\n ', '* [Contribute](#contribute) \n', '* [Tests](#tests) \n','* [License](#license) \n', '* [Questions](#questions) \n'];
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -49,8 +53,10 @@ ${tableArr}\n
 # Description \n ${data.description}\n
 # Installation \n ${data.installation}\n
 # Usage \n ${data.usage}\n
-${renderLicenseSection(data.license)}`;
-
+# Contribute \n ${data.contribute}\n
+# Tests \n ${data.tests}\n
+${renderLicenseSection(data.license)}
+# Questions \n ${data.question}\n`;
 };
 
 module.exports = generateMarkdown;
