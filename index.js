@@ -5,7 +5,7 @@ const generateMarkdown = require('./util/generateMarkdown');
 
 
 // added license as const as it is being referenced within the generalMarkdown.js? also seen this online so added it just incase.
-const license = ['Apache 2.0 License','Boost Software License 1.0','BSD 3-Clause License','BSD 2-Clause License', 'None']
+const license = ['Apache_2.0-blue.svg','Boost_1.0-lightblue.svg','BSD_3--Clause-blue.svg','BSD_2--Clause-orange.svg', 'None']
 
 // created const array with questions for user input
 // TODO: Create an array of questions for user input
@@ -48,7 +48,7 @@ const questions = [{
 {
     type: 'list',
     message: 'if you have any questions pick from the list of contact methods!',
-    name: 'questions',
+    name: 'question',
     choices: ['email','phone','text'],
 }
 ];

@@ -3,14 +3,8 @@
 // used licenses from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba#bsd-3-clause-license
 function renderLicenseBadge(license) {
     let badge ='';
-    if (license === 'Apache 2.0 License'){
-        badge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-    }else if(license === 'Boost Software License 1.0'){
-        badge = '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
-    }else if (license === 'BSD 3-Clause License'){
-
-    }else if (license === 'BSD 2-Clause License'){
-        badge = '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
+    if (license != ''){
+        badge = '[![License](https://img.shields.io/badge/License-' + license + ')](https://opensource.org/licenses/Apache-2.0)';
     }
     return badge;
 };
@@ -19,14 +13,14 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
     let licenseLink;
-if (license === 'Apache 2.0 License'){
-    licenseLink = 'https://opensource.org/license/apache-2-0/';
-}else if (license ==='Boost Software License 1.0'){
+if (license === 'Apache_2.0-blue.svg'){
+    licenseLink = 'https://opensource.org/licenses/Apache-2.0';
+}else if (license ==='Boost_1.0-lightblue.svg'){
     licenseLink = 'https://www.boost.org/LICENSE_1_0.txt';
-}else if (license === 'BSD 3-Clause License'){
-    licenseLink = 'https://opensource.org/license/bsd-3-clause/';
-}else if (license === 'BSD 2-Clause License'){
-    licenseLink = 'https://opensource.org/license/bsd-2-clause/';
+}else if (license === 'BSD_3--Clause-blue.svg'){
+    licenseLink = 'https://opensource.org/licenses/BSD-3-Clause';
+}else if (license === 'BSD_2--Clause-orange.svg'){
+    licenseLink = 'https://opensource.org/licenses/BSD-2-Clause';
 }
 return licenseLink;
 }
@@ -41,15 +35,20 @@ if(license != 'None'){
 }
 return licenseSection;
 }
-let tableContent = ['Title', 'Description', 'Installation', 'Usage', 'License', 'Contribute', 'Tests', 'Questions'];
+let tableContent = ['* Description \n', ' * Installation \n', '* Usage\n ', '* License \n', '* Contribute \n', '* Tests \n', '* Questions \n'];
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+    let tableArr = '';
     for (let i = 0; i < tableContent.length; i++){
-        tableArr = tableArr[i];
+        tableArr += tableContent[i];
+        console.log(tableArr);
        };
-    return `## ${data.title} \n# Table of Content:\n# ${tableArr[i]} \n
-#Description${data.description}\n`;
+return`# ${data.title} \n
+${renderLicenseBadge(data.license)}
+# Table of Content: \n
+${tableArr}\n
+# Description \n ${data.description}\n`;
 
 };
 
